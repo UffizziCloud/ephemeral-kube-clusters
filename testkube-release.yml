@@ -1,18 +1,15 @@
 apiVersion: helm.toolkit.fluxcd.io/v2beta1
 kind: HelmRelease
 metadata:
-  name: vcluster
+  name: testkube
 spec:
   interval: 5m
-  releaseName: test-vcluster
+  releaseName: testkube
   chart:
     spec:
-      chart: vcluster
-      version: 0.15.0
+      chart: testkube
       sourceRef:
         kind: HelmRepository
-        name: loft
-        namespace: veecluster
+        name: kubeshop
+        namespace: testkube
       interval: 1m
-  values:
-    replicaCount: 2
